@@ -1,0 +1,23 @@
+Backtracking
+
+Big Picture: We may find the solution before exploring everything!
+
+Uses a Tree-like structure
+
+N-Queens:
+- Chess board, want to place queens so that no two queens are in the same row, column, or diagonal.
+- n queens on nxn board
+
+Example 4x4 solution:
+__x_
+x___
+___x
+_x__ 
+
+Start with empty board.
+If a branch doesn't collapse (shown false), continue with the recursive tree.
+Once a branch is shown false, go back and try again. (Can even go back to the beginning!)
+Go one by one, place in every possible cell in column.
+Once a feasible solution is found, return. If not, go back.
+
+Runtime: O(n * n!)

@@ -1,0 +1,15 @@
+Recurrence Relations
+
+Recurrence: Equation or inequality that expresses the value of a function in terms of its value on smaller input size.
+
+T(n): O(1)          n = 1
+      2T(n/2) + n   n > 1
+
+Solving:
+- Iterative (in CS1)
+- Recursion Tree & Substitution Method (not covered)
+- Master Theorem (in CS2)
+
+Master Theorem: The 'Cookbook'
+T(n) = aT(n/b) + f(n)
+where a >= 1 and b > 1 are constant and f(n) is an asymptotically positive function

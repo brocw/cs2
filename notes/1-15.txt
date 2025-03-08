@@ -1,0 +1,22 @@
+Divide and Conquer
+
+Quick and Merge Sort (n log n)
+Binary Search (log n)
+
+Base Case: When problem is small enough, brute force using n^2 algorithm
+
+Closest Pair of Points
+
+Naive; n^2 brute force (compare all points to all other points)
+
+Points as set on 2D Plane
+Each set as an (x, y) Pair
+Distance calculated using normal distance equation
+
+Algorithm:
+- Sort points with nlogn algorithm (Merge, Quick Sort)
+- Find the closest pair on the left side and the right side.
+Divide plane in half, check on both sides for closest points
+delta = min(point1, point2)
+Base Case: Each divided segment of plane has 2 or 3 points
+When you find a result smaller than delta, stop

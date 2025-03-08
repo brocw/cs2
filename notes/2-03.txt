@@ -1,0 +1,82 @@
+Exam #1 Review
+
+Q1:
+    Given n^2 - n - 1 = O(n^3)
+    Need to prove it's bounded that n^3
+    <= g(n) of c * O(n^3)
+    Need to prove the inequality (multiple correct answers)
+    Move everything to the right side (with c in front of prove)
+    Let c be any number, solve (if given c)
+
+Q2:
+    a yes
+    b no
+    c yes
+    d no
+
+Q3: (in ascending order)
+    f3 (log)
+    f4 (n log n)
+    f6 (n^99)
+    f2 (n^100 + n log n)
+    f1 (1.5^n)
+    f7 (n!)
+
+Q4:
+    (a) T(n) = 4T(n/2) + n^2
+    Need to know a, b, f(n)
+        a = 4
+        b = 2
+        f(n) = n^2
+    Need to find logb^a
+        log(2)^4 = 2
+    n^2 = Theta(n^2)
+    T(n) = Theta(n^2 * log(n))
+
+    (b) T(n) = 2T(n/4) + n
+        a = 2
+        b = 4
+        f(n) = n
+
+    log(4)^2 = n^(1/2)
+    n = Omega(n^(1/2)) + e
+    T(n) = Theta(n)
+
+Q5:
+    No, need to make the splits (dividing) first. 
+    After, in those splits yes.
+    This is to prevent computing the furthest points.
+
+Q6:
+    boolean solveMazeUtil(int[][] maze, int x, int y, int[][] path) {
+        // Base case
+        if (x == N - 1 && y == N - 1) {
+            path[x][y] = 1;
+            printPath(path);
+            return true;
+        }
+
+        // Check if (x, y) is a valid cell
+        if (x >= 0 && y >= 0 && x < N && y < N && maze[x][y] == 1
+            && path[x][y] == 0) {
+            // Set our path
+            path[x][y] = 1;
+
+            // Recurse through all 4 directions
+            if (solveMazeUtil(maze, x - 1, y, path)) {
+                return true;
+            }
+            if (solveMazeUtil(maze, x + 1, y, path)) {
+                return true;
+            }
+            if (solveMazeUtil(maze, x, y + 1, path)) {
+                return true;
+            }
+            if (solveMazeUtil(maze, x, y - 1, path)) {
+                return true;
+            }
+            
+            // Backtrack
+            path[x][y] = 0;
+        }
+    }
